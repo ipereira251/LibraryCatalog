@@ -1,0 +1,309 @@
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="adv_search_style.css" type="text/css" rel="stylesheet">
+
+  
+  <!-- Browser Tab title -->
+  <title>UTD Library</title>
+</head>
+
+<body onpageshow="start()">
+  <nav class="navbar fixed-top navbar-light" style="background-color: #3EA055;">
+    <a class="navbar-brand" href="#" ><img src="comet.png" style="height: 40px; width: 200px;" alt="UTD     Comet Icon"></a>
+  </nav>
+  <div class="flex-container">
+    <h2><b>Search the Catalog</b></h2><hr><br>
+    <h3>Advanced Search</h3>
+    <div class="container">
+      <form>
+        <h3>Availability: </h3>
+        
+        <!-- AUTHOR -->
+        <!-- 1st search term -->
+        <h3>Author: </h3>
+        <select name="author-contains-1" id ="author-contains-1">
+            <option value="contains-author-1">Contains</option>
+            <option value="is-exactly-author-1">Is exactly</option>
+        </select>
+        <input type="search" id="author-search-1">
+        <!-- 2nd search term -->
+        <br> 
+        <select name="author-andor-2" id="author-andor-2">
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="author-contains-2" id="author-contains-2">
+          <option value="contains-author-2">Contains</option>
+          <option value="is-exactly-author-2">Is exactly</option>
+        </select>
+        <input type="search" id="author-search-2">
+        <button type="button" onclick="newlineAuthor2()" id="author-nl-2">+ Add New Line</button>
+        <br>
+        <!-- 3rd search term -->
+        <select name="author-andor-3" id="author-andor-3" >
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="auhtor-contains-3" id="author-contains-3" >
+          <option value="contains-author-3">Contains</option>
+          <option value="is-exactly-author-3" >Is exactly</option>
+        </select>
+        <input type="search" id="author-search-3" >
+        <button type="button" onclick="newlineAuthor3()" id="author-nl-3">+ Add New Line</button>
+        <br>
+        <!-- 4th search term -->
+        <select name="author-andor-4" id="author-andor-4" >
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="author-contains-4" id="author-contains-4" >
+          <option value="contains-author-4">Contains</option>
+          <option value="is-exactly-author-4" >Is exactly</option>
+        </select>
+        <input type="search" id="author-search-4" >
+        <button type="button" onclick="newlineAuthor4()" id="author-nl-4">+ Add New Line</button>
+        <br>
+        <!-- 5th search term -->
+        <select name="author-andor-5" id="author-andor-5" >
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="author-contains-5" id="author-contains-5" >
+          <option value="contains-author-5">Contains</option>
+          <option value="is-exactly-author-5" >Is exactly</option>
+        </select>
+        <input type="search" id="author-search-5" >
+        <br>
+        
+
+        <!-- TITLE -->
+        <!-- 1st search term -->
+        <h3>Title: </h3>
+        Title  <select name="title-contains-1" id ="title-contains-1">
+            <option value="contains-title-1">Contains</option>
+            <option value="is-exactly-title-1">Is exactly</option>
+        </select>
+        <input type="search" id="title-search-1">
+        <!-- 2nd search term -->
+        <br> 
+        <select name="title-andor-2" id="title-andor-2">
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="title-contains-2" id="title-contains-2">
+          <option value="contains-title-2">Contains</option>
+          <option value="is-exactly-title-2">Is exactly</option>
+        </select>
+        <input type="search" id="title-search-2">
+        <button type="button" onclick="newlineTitle2()" id="title-nl-2">+ Add New Line</button>
+        <br>
+        <!-- 3rd search term -->
+        <select name="title-andor-3" id="title-andor-3" >
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="title-contains-3" id="title-contains-3" >
+          <option value="contains-title-3">Contains</option>
+          <option value="is-exactly-title-3" >Is exactly</option>
+        </select>
+        <input type="search" id="title-search-3" >
+        <button type="button" onclick="newlineTitle3()" id="title-nl-3">+ Add New Line</button>
+        <br>
+        <!-- 4th search term -->
+        <select name="title-andor-4" id="title-andor-4" >
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="title-contains-4" id="title-contains-4" >
+          <option value="contains-title-4">Contains</option>
+          <option value="is-exactly-title-4" >Is exactly</option>
+        </select>
+        <input type="search" id="title-search-4" >
+        <button type="button" onclick="newlineTitle4()" id="title-nl-4">+ Add New Line</button>
+        <br>
+        <!-- 5th search term -->
+        <select name="title-andor-5" id="title-andor-5" >
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select>
+        <select name="title-contains-5" id="title-contains-5" >
+          <option value="contains-title-5">Contains</option>
+          <option value="is-exactly-title-5" >Is exactly</option>
+        </select>
+        <input type="search" id="title-search-5" >
+        <br>
+
+
+        <!---->
+        <script>
+        function start(){
+          //// AUTHOR
+          document.getElementById('author-andor-3').style.display = 'none';
+          document.getElementById('author-contains-3').style.display = 'none';
+          document.getElementById('author-search-3').style.display = 'none';
+          document.getElementById('author-nl-3').style.display = 'none';
+
+          document.getElementById('author-andor-4').style.display = 'none';
+          document.getElementById('author-contains-4').style.display = 'none';
+          document.getElementById('author-search-4').style.display = 'none';
+          document.getElementById('author-nl-4').style.display = 'none';
+
+          document.getElementById('author-andor-5').style.display = 'none';
+          document.getElementById('author-contains-5').style.display = 'none';
+          document.getElementById('author-search-5').style.display = 'none';
+
+          //// TITLE 
+          document.getElementById('title-andor-3').style.display = 'none';
+          document.getElementById('title-contains-3').style.display = 'none';
+          document.getElementById('title-search-3').style.display = 'none';
+          document.getElementById('title-nl-3').style.display = 'none';
+
+          document.getElementById('title-andor-4').style.display = 'none';
+          document.getElementById('title-contains-4').style.display = 'none';
+          document.getElementById('title-search-4').style.display = 'none';
+          document.getElementById('title-nl-4').style.display = 'none';
+
+          document.getElementById('title-andor-5').style.display = 'none';
+          document.getElementById('title-contains-5').style.display = 'none';
+          document.getElementById('title-search-5').style.display = 'none';
+          
+        }
+        function newlineAuthor2(){
+          document.getElementById('author-nl-2').style.display = 'none';
+          document.getElementById('author-andor-3').style.display = 'inline';
+          document.getElementById('author-contains-3').style.display = 'inline';
+          document.getElementById('author-search-3').style.display = 'inline';
+          document.getElementById('author-nl-3').style.display = 'inline';
+        }
+        function newlineAuthor3(){
+          document.getElementById('author-nl-3').style.display = 'none';
+          document.getElementById('author-andor-4').style.display = 'inline';
+          document.getElementById('author-contains-4').style.display = 'inline';
+          document.getElementById('author-search-4').style.display = 'inline';
+          document.getElementById('author-nl-4').style.display = 'inline';
+        }
+        function newlineAuthor4(){
+          document.getElementById('author-nl-4').style.display = 'none';
+          document.getElementById('author-andor-5').style.display = 'inline';
+          document.getElementById('author-contains-5').style.display = 'inline';
+          document.getElementById('author-search-5').style.display = 'inline';
+        }
+        
+
+        function newlineTitle2(){
+          document.getElementById('title-nl-2').style.display = 'none';
+          document.getElementById('title-andor-3').style.display = 'inline';
+          document.getElementById('title-contains-3').style.display = 'inline';
+          document.getElementById('title-search-3').style.display = 'inline';
+          document.getElementById('title-nl-3').style.display = 'inline';
+        }
+        function newlineTitle3(){
+          document.getElementById('title-nl-3').style.display = 'none';
+          document.getElementById('title-andor-4').style.display = 'inline';
+          document.getElementById('title-contains-4').style.display = 'inline';
+          document.getElementById('title-search-4').style.display = 'inline';
+          document.getElementById('title-nl-4').style.display = 'inline';
+        }
+        function newlineTitle4(){
+          document.getElementById('title-nl-4').style.display = 'none';
+          document.getElementById('title-andor-5').style.display = 'inline';
+          document.getElementById('title-contains-5').style.display = 'inline';
+          document.getElementById('title-search-5').style.display = 'inline';
+        }
+        </script>
+        <!-- PUB YEAR -->
+        <h3>Publication year: </h3>
+
+        <div class="range_container">
+          <div class="sliders_control">
+              <input id="fromSlider" type="range" value="10" min="0" max="100"/>
+              <input id="toSlider" type="range" value="40" min="0" max="100"/>
+          </div>
+          <div class="form_control">
+              <div class="form_control_container">
+                  <div class="form_control_container__time">Min</div>
+                  <input class="form_control_container__time__input" type="number" id="fromInput" value="10" min="0" max="100"/>
+              </div>
+              <div class="form_control_container">
+                  <div class="form_control_container__time">Max</div>
+                  <input class="form_control_container__time__input" type="number" id="toInput" value="40" min="0" max="100"/>
+              </div>
+          </div>
+        </div>
+
+        <!-- RATING -->
+        <h3>Rating: </h3>
+
+        <!-- LANGUAGE -->
+        <!-- want to get 2 columns, each takes up 25% of screen -->
+        <h3>Language: </h3> <!--make this hideable-->
+        <div class="row">
+          <div class="column">
+            <input type = "checkbox" id = "eng">
+            <label for = "eng">English</label> <br>
+            <input type = "checkbox" id = "spa">
+            <label for = "spa">Spanish</label> <br>
+            <input type = "checkbox" id = "grc">
+            <label for = "grc">Ancient Greek</label> <br>
+            <input type = "checkbox" id = "ger">
+            <label for = "ger">German</label> <br>
+            <input type = "checkbox" id = "ara">
+            <label for = "ara">Arabic</label> <br>
+            <input type = "checkbox" id = "zho">
+            <label for = "zho">Mandarin</label> <br>
+            <input type = "checkbox" id = "por">
+            <label for = "por">Portuguese</label> <br>
+            <input type = "checkbox" id = "ita">
+            <label for = "ita">Italian</label> <br>
+            <input type = "checkbox" id = "msa">
+            <label for = "msa">Malay</label> <br>
+            <input type = "checkbox" id = "wel">
+            <label for = "wel">Welsh</label> <br>
+            <input type = "checkbox" id = "nor">
+            <label for = "nor">Norwegian</label> <br>
+            <input type = "checkbox" id = "gla">
+            <label for = "gla">Scottish Gaelic</label> <br>
+            
+          </div>
+
+          <div class="column">
+            <input type = "checkbox" id = "fre">
+            <label for = "fre">French</label> <br>
+            <input type = "checkbox" id = "mul">
+            <label for = "mul">Multiple</label> <br>
+            <input type = "checkbox" id = "enm">
+            <label for = "enm">Middle English</label> <br>
+            <input type = "checkbox" id = "jpn">
+            <label for = "jpn">Japanese</label> <br>
+            <input type = "checkbox" id = "nl">
+            <label for = "nl">Dutch</label> <br>
+            <input type = "checkbox" id = "lat">
+            <label for = "lat">Latin</label> <br>
+            <input type = "checkbox" id = "srp">
+            <label for = "srp">Serbian</label> <br>
+            <input type = "checkbox" id = "rus">
+            <label for = "rus">Russian</label> <br>
+            <input type = "checkbox" id = "glg">
+            <label for = "glg">Galician</label> <br>
+            <input type = "checkbox" id = "swe">
+            <label for = "swe">Swedish</label> <br>
+            <input type = "checkbox" id = "tur">
+            <label for = "tur">Turkish</label> <br>
+            <input type = "checkbox" id = "ale">
+            <label for = "ale">Aleut</label> <br>
+            
+          </div> <br>
+
+        <!-- ISBN -->
+        <h3>ISBN</h3>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
