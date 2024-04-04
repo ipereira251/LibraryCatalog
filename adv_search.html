@@ -17,7 +17,7 @@
   <nav class="navbar fixed-top navbar-light" style="background-color: #3EA055;">
     <a class="navbar-brand" href="#" ><img src="comet.png" style="height: 40px; width: 200px;" alt="UTD     Comet Icon"></a>
   </nav>
-  <div class="flex-container">
+  <div class="adv-search-sidebar">
     <h2><b>Search the Catalog</b></h2><hr><br>
     <h3>Advanced Search</h3>
     <div class="container">
@@ -27,7 +27,7 @@
         <!-- AUTHOR -->
         <!-- 1st search term -->
         <h3>Author: </h3>
-        <select name="author-contains-1" id ="author-contains-1">
+        Author  <select name="author-contains-1" id ="author-contains-1">
             <option value="contains-author-1">Contains</option>
             <option value="is-exactly-author-1">Is exactly</option>
         </select>
@@ -172,7 +172,18 @@
           document.getElementById('title-andor-5').style.display = 'none';
           document.getElementById('title-contains-5').style.display = 'none';
           document.getElementById('title-search-5').style.display = 'none';
-          
+
+          //// PUBLICATION YEAR
+
+          //// RATING
+
+          //// LANGUAGE
+
+          //// ISBN
+          document.getElementById('isbn-andor-2').style.display = 'none';
+          document.getElementById('isbn-contains-2').style.display = 'none';
+          document.getElementById('isbn-search-2').style.display = 'none';
+
         }
         function newlineAuthor2(){
           document.getElementById('author-nl-2').style.display = 'none';
@@ -299,9 +310,39 @@
             <label for = "ale">Aleut</label> <br>
             
           </div> <br>
+          </div>
+          <!-- ISBN -->
+          <h3>ISBN</h3>
+          ISBN  <select name="isbn-contains-1" id ="isbn-contains-1">
+          <option value="contains-isbn-1">Contains</option>
+          <option value="is-exactly-isbn-1">Is exactly</option>
+          </select>
+          <input type="search" id="isbn-search-1">
+          <button type="button" onclick="newlineISBN1()" id="isbn-nl-1">+ Add New Line</button>
 
-        <!-- ISBN -->
-        <h3>ISBN</h3>
+          <!-- 2nd search term -->
+          <br> 
+          <select name="isbn-andor-2" id="isbn-andor-2">
+          <option value="and">And</option>
+          <option value="or">Or</option>
+          </select>
+          <select name="isbn-contains-2" id="isbn-contains-2">
+          <option value="contains-isbn-2">Contains</option>
+          <option value="is-exactly-isbn-2">Is exactly</option>
+          </select>
+          <input type="search" id="isbn-search-2">
+
+          <script>
+            //// ISBN 
+            function newlineISBN1(){
+              document.getElementById('isbn-nl-1').style.display = 'none';
+              document.getElementById('isbn-andor-2').style.display = 'inline';
+              document.getElementById('isbn-contains-2').style.display = 'inline';
+              document.getElementById('isbn-search-2').style.display = 'inline';
+
+            }
+          </script>
+        <br>
     </form>
     </div>
   </div>
