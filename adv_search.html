@@ -58,8 +58,23 @@
           document.getElementById('title-search-5').style.display = 'none';
 
           //// PUBLICATION YEAR
+          document.getElementById("pub-year-or").style.display = "none";
+          document.getElementById("pub-year-min-2").style.display = "none";
+          document.getElementById("pub-year-max-2").style.display = "none";
+          document.getElementById("pub-year-min-2-label").style.display = "none";
+          document.getElementById("pub-year-max-2-label").style.display = "none";
+
 
           //// RATING
+          document.getElementById("rating-or").style.display = "none";
+          document.getElementById("rating-min-2").style.display = "none";
+          document.getElementById("rating-max-2").style.display = "none";
+          document.getElementById("rating-min-2-label").style.display = "none";
+          document.getElementById("rating-max-2-label").style.display = "none";
+            
+          //GENRE 
+
+
 
           //// LANGUAGE
           //document.getElementByClass('collapsible').style.display = 'none';
@@ -106,7 +121,7 @@
           <option value="and">And</option>
           <option value="or">Or</option>
         </select>
-        <select name="auhtor-contains-3" id="author-contains-3" >
+        <select name="author-contains-3" id="author-contains-3" >
           <option value="contains-author-3">Contains</option>
           <option value="is-exactly-author-3" >Is exactly</option>
         </select>
@@ -243,17 +258,57 @@
         </script>
         <!-- PUB YEAR -->
         <h3>Publication year: </h3>
-        <label for="pub-year-min">Min</label>
-        <input type="search" id="pub-year-min" name="pub-year-min">
-        <label for="pub-year-max">Max</label>
-        <input type="search" id="pub-year-max" name="pub-year-max">
+        <label for="pub-year-min-1" id="pub-year-min-1-label">From </label>
+        <input type="search" id="pub-year-min-1" name="pub-year-min-1">
+        <label for="pub-year-max-1" id="pub-year-max-1-label"> to </label>
+        <input type="search" id="pub-year-max-1" name="pub-year-max-1">
+        <p id="pub-year-or">or</p>
+        <button type="button" onclick="newlineYear1()" id="year-nl-1">+ Add New Line</button>
+        <br>
+        <label for="pub-year-min-2" id="pub-year-min-2-label">from </label>
+        <input type="search" id="pub-year-min-2" name="pub-year-min-2">
+        <label for="pub-year-max-2" id="pub-year-max-2-label"> to </label>
+        <input type="search" id="pub-year-max-2" name="pub-year-max-2">
+
+        <script>
+          function newlineYear1(){
+          document.getElementById("year-nl-1").style.display = 'none';
+          document.getElementById("pub-year-or").style.display = 'inline';
+          document.getElementById("pub-year-min-2").style.display = 'inline';
+          document.getElementById('pub-year-min-2-label').style.display = 'inline';
+          document.getElementById('pub-year-max-2').style.display = 'inline';
+          document.getElementById('pub-year-max-2-label').style.display = 'inline';
+        }
+        </script>
 
         <!-- RATING -->
         <h3>Rating: </h3>
-        <label for="rating-min">Min</label>
-        <input type="search" id="rating-min">
-        <label for="rating-max">Max</label>
-        <input type="search" id="Rating-max">
+        <label for="rating-min-1" id="rating-min-1-label">From </label>
+        <input type="search" id="rating-min-1">
+        <label for="rating-max-1" id="rating-max-1-label"> to </label>
+        <input type="search" id="rating-max-1">
+        <p id="rating-or">or</p>
+        <button type="button" onclick="newlineRating1()" id="rating-nl-1">+ Add New Line</button>
+        <br>
+        <label for="rating-min-2" id="rating-min-2-label">from </label>
+        <input type="search" id="rating-min-2">
+        <label for="rating-max-2" id="rating-max-2-label"> to </label>
+        <input type="search" id="rating-max-2">
+
+        <script>
+          function newlineRating1(){
+          document.getElementById("rating-nl-1").style.display = 'none';
+          document.getElementById("rating-or").style.display = 'inline';
+          document.getElementById("rating-min-2").style.display = 'inline';
+          document.getElementById("rating-min-2-label").style.display = 'inline';
+          document.getElementById('rating-max-2').style.display = 'inline';
+          document.getElementById("rating-max-2-label").style.display = 'inline';
+          }
+        </script>
+
+        <!-- GENRE -->
+
+
 
         <!-- LANGUAGE -->
         <h3>Language: </h3> <!--make this hideable-->
@@ -377,19 +432,29 @@
             let title5 = document.forms["adv-search"]["title-search-5"].value;
             
             //PUBLICATION YEAR
-            let pubYearMin = document.forms["adv-search"]["pub-year-min"].value;
-            let pubYearMax = document.forms["adv-search"]["pub-year-max"].value;
-            if(pubYearMin > pubYearMax){
+            let pubYearMin1 = document.forms["adv-search"]["pub-year-min"].value;
+            let pubYearMax1 = document.forms["adv-search"]["pub-year-max"].value;
+            if(pubYearMin1 > pubYearMax1){
               alert("Minimum year should be before maximum year. Please select a valid range for publication year.");
               return false;
             }
-            if (pubYearMin == null){
-              pubYearMin = 1900;
+            if(pubYearMin2 > pubYearMax2){
+              alert("Minimum year should be before maximum year. Please select a valid range for publication year.");
+              return false;
             }
-            if (pubYearMax == null){
-              pubYearMax = 2010;
+            if (pubYearMin1 == null){
+              pubYearMin1 = 1900;
             }
-            if(pubYearMin < 1900 || pubYearMax > 2010){
+            if (pubYearMax1 == null){
+              pubYearMax1 = 2010;
+            }
+            if (pubYearMin2 == null){
+              pubYearMin2 = 1900;
+            }
+            if (pubYearMax2 == null){
+              pubYearMax2 = 2010;
+            }
+            if(pubYearMin1 < 1900 || pubYearMax1 > 2010 || pubYearMin2 < 1900 || pubYearMax2 > 2010){
               alert("Our catalog only contains books from 1900 to 2010. Please select a range for publication year.");
               return false;
             }
@@ -411,6 +476,8 @@
               alert("Our rating system is from 0 to 5. Please select a valid range for rating.");
               return false;
             }
+
+            //GENRE 
 
 
             //LANGUAGE
