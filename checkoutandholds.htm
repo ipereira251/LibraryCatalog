@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Checkout History</title>
+    <style>
+	img {
+		float: left;
+	}
+    </style>
+</head>
+<body>
+    <h2>View Checkout History</h2>
+
+    <h3>Currently checked out:</h3>
+    <div>
+        Checked out: <span id="currentlyCheckedOutDate"></span> Due: <span id="dueDate"></span>
+    </div>
+    <hr>
+    <div>
+        <img src="sample-book-cover.jpg" alt="Book 1" width=70 height=105> 
+	<div> 
+		<label for="title">Title:</label> <input type="text" id="title" readonly><br>
+        	<label for="genres">Genres:</label> <input type="text" id="genres" readonly><br>
+        	<label for="authors">Authors:</label> <input type="text" id="authors" readonly><br>
+        	<label for="year">Year:</label> <input type="text" id="year" readonly><br>
+	</div>
+	<button>Place a Hold</button
+        <!-- Additional fields as needed -->
+    </div>
+    <hr>
+
+    <h3>Active holds:</h3>
+    <hr>
+    <div>
+        <label for="titleHold">Title:</label> <input type="text" id="titleHold" readonly><br>
+        <label for="genresHold">Genres:</label> <input type="text" id="genresHold" readonly><br>
+        <label for="authorsHold">Authors:</label> <input type="text" id="authorsHold" readonly><br>
+        <label for="yearHold">Year:</label> <input type="text" id="yearHold" readonly><br>
+        <!-- Additional fields as needed -->
+    </div>
+    <hr>
+
+    <h3>History:</h3>
+    <hr>
+    <div>
+        Checked out: <span id="checkoutHistoryDate"></span> Returned: <span id="returnedDate"></span>
+    </div>
+    <hr>
+    <div>
+        <label for="titleHistory">Title:</label> <input type="text" id="titleHistory" readonly><br>
+        <label for="genresHistory">Genres:</label> <input type="text" id="genresHistory" readonly><br>
+        <label for="authorsHistory">Authors:</label> <input type="text" id="authorsHistory" readonly><br>
+        <label for="yearHistory">Year:</label> <input type="text" id="yearHistory" readonly><br>
+        <!-- Additional fields as needed -->
+    </div>
+
+    <!-- JavaScript for populating data -->
+    <script>
+        // Sample data
+        document.getElementById('currentlyCheckedOutDate').innerText = '2024-04-01';
+        document.getElementById('dueDate').innerText = '2024-04-15';
+
+        document.getElementById('title').value = 'Sample Book 1';
+        document.getElementById('genres').value = 'Fiction';
+        document.getElementById('authors').value = 'John Doe';
+        document.getElementById('year').value = '2020';
+
+        document.getElementById('titleHold').value = 'Sample Book 2';
+        document.getElementById('genresHold').value = 'Mystery';
+        document.getElementById('authorsHold').value = 'Jane Smith';
+        document.getElementById('yearHold').value = '2019';
+
+        document.getElementById('checkoutHistoryDate').innerText = '2024-03-15';
+        document.getElementById('returnedDate').innerText = '2024-03-30';
+
+        document.getElementById('titleHistory').value = 'Sample Book 3';
+        document.getElementById('genresHistory').value = 'Science Fiction';
+        document.getElementById('authorsHistory').value = 'Alice Johnson';
+        document.getElementById('yearHistory').value = '2021';
+    </script>
+</body>
+</html>
