@@ -1,7 +1,14 @@
-.row{
-  display: flex;
-}
 .column{
-  flex: 25%;
+  float: left;
 }
-
+.first{
+  width: 20%;
+}
+.second{
+  width: 30%;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
