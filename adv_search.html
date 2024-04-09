@@ -55,12 +55,28 @@
           document.getElementById('title-search-5').style.display = 'none';
 
           //// PUBLICATION YEAR
+          document.getElementById("pub-year-or").style.display = "none";
+          document.getElementById("pub-year-min-2").style.display = "none";
+          document.getElementById("pub-year-max-2").style.display = "none";
+          document.getElementById("pub-year-min-2-label").style.display = "none";
+          document.getElementById("pub-year-max-2-label").style.display = "none";
+
 
           //// RATING
+          document.getElementById("rating-or").style.display = "none";
+          document.getElementById("rating-min-2").style.display = "none";
+          document.getElementById("rating-max-2").style.display = "none";
+          document.getElementById("rating-min-2-label").style.display = "none";
+          document.getElementById("rating-max-2-label").style.display = "none";
+            
+          //GENRE 
+        
+            
 
           //// LANGUAGE
           //document.getElementByClass('collapsible').style.display = 'none';
           //collapsible.classList.toggle("active");
+          
 
           //// ISBN
           document.getElementById('isbn-andor-2').style.display = 'none';
@@ -73,9 +89,9 @@
 
         <!-- AVAILABILITY -->
         <h3>Availability: </h3>
-        <input type="radio" name="avail" id="avail-on-shelf" value="On shelf only">
+        <input type="radio" name="avail" id="avail-on-shelf">
         <label for="avail-on-shelf">On shelf only</label>
-        <input type="radio" name="avail" id="avail-all" value="all">
+        <input type="radio" name="avail" id="avail-all">
         <label for="avail-all">All</label>
         <!-- AUTHOR -->
         <!-- 1st search term -->
@@ -103,7 +119,7 @@
           <option value="and">And</option>
           <option value="or">Or</option>
         </select>
-        <select name="auhtor-contains-3" id="author-contains-3" >
+        <select name="author-contains-3" id="author-contains-3" >
           <option value="contains-author-3">Contains</option>
           <option value="is-exactly-author-3" >Is exactly</option>
         </select>
@@ -240,80 +256,181 @@
         </script>
         <!-- PUB YEAR -->
         <h3>Publication year: </h3>
-        <label for="pub-year-min">Min</label>
-        <input type="search" id="pub-year-min" name="pub-year-min">
-        <label for="pub-year-max">Max</label>
-        <input type="search" id="pub-year-max" name="pub-year-max">
+        <label for="pub-year-min-1" id="pub-year-min-1-label">From </label>
+        <input type="search" id="pub-year-min-1" name="pub-year-min-1">
+        <label for="pub-year-max-1" id="pub-year-max-1-label"> to </label>
+        <input type="search" id="pub-year-max-1" name="pub-year-max-1">
+        <p id="pub-year-or">or</p>
+        <button type="button" onclick="newlineYear1()" id="year-nl-1">+ Add New Line</button>
+        <br>
+        <label for="pub-year-min-2" id="pub-year-min-2-label">from </label>
+        <input type="search" id="pub-year-min-2" name="pub-year-min-2">
+        <label for="pub-year-max-2" id="pub-year-max-2-label"> to </label>
+        <input type="search" id="pub-year-max-2" name="pub-year-max-2">
+
+        <script>
+          function newlineYear1(){
+          document.getElementById("year-nl-1").style.display = 'none';
+          document.getElementById("pub-year-or").style.display = 'inline';
+          document.getElementById("pub-year-min-2").style.display = 'inline';
+          document.getElementById('pub-year-min-2-label').style.display = 'inline';
+          document.getElementById('pub-year-max-2').style.display = 'inline';
+          document.getElementById('pub-year-max-2-label').style.display = 'inline';
+        }
+        </script>
 
         <!-- RATING -->
         <h3>Rating: </h3>
-        <label for="rating-min">Min</label>
-        <input type="search" id="rating-min">
-        <label for="rating-max">Max</label>
-        <input type="search" id="Rating-max">
+        <label for="rating-min-1" id="rating-min-1-label">From </label>
+        <input type="search" id="rating-min-1">
+        <label for="rating-max-1" id="rating-max-1-label"> to </label>
+        <input type="search" id="rating-max-1">
+        <p id="rating-or">or</p>
+        <button type="button" onclick="newlineRating1()" id="rating-nl-1">+ Add New Line</button>
+        <br>
+        <label for="rating-min-2" id="rating-min-2-label">from </label>
+        <input type="search" id="rating-min-2">
+        <label for="rating-max-2" id="rating-max-2-label"> to </label>
+        <input type="search" id="rating-max-2">
+
+        <script>
+          function newlineRating1(){
+          document.getElementById("rating-nl-1").style.display = 'none';
+          document.getElementById("rating-or").style.display = 'inline';
+          document.getElementById("rating-min-2").style.display = 'inline';
+          document.getElementById("rating-min-2-label").style.display = 'inline';
+          document.getElementById('rating-max-2').style.display = 'inline';
+          document.getElementById("rating-max-2-label").style.display = 'inline';
+          }
+        </script>
+
+        <!-- GENRE -->
+        <h3>Genre: </h3>
+        <details>
+          <summary>Open/Close</summary>
+          <div class="row">
+            <div class="column first">
+              <input type="checkbox" id="fantasy">
+              <label for="fantasy">Fantasy</label> <br>
+              <input type="checkbox" id="scifi">
+              <label for="scifi">Science Fiction</label> <br>
+              <input type="checkbox" id="ya">
+              <label for="ya">Young Adult</label> <br>
+              <input type="checkbox" id="hist-fic">
+              <label for="hist-fic">Historical, Historical Fiction</label> <br>
+              <input type="checkbox" id="sci">
+              <label for="sci">Science</label> <br>
+              <input type="checkbox" id="lit-crit">
+              <label for="lit-crit">Literary Criticism</label> <br>
+              <input type="checkbox" id="mystery">
+              <label for="mystery">Mystery</label> <br>
+              <input type="checkbox" id="poetry">
+              <label for="poetry">Poetry</label> <br>
+              <input type="checkbox" id="phil">
+              <label for="phil">Philosophy</label> <br>
+              <input type="checkbox" id="biography">
+              <label for="biography">Biography</label> <br>
+              <input type="checkbox" id="history">
+              <label for="history">History</label> <br>
+              <input type="checkbox" id="health">
+              <label for="health">Health</label> <br>
+            </div>
+            <div class="column second">
+              <input type="checkbox" id="fiction">
+              <label for="fiction">Fiction</label> <br>
+              <input type="checkbox" id="nonfiction">
+              <label for="nonfiction">Nonfiction</label> <br>
+              <input type="checkbox" id="edu">
+              <label for="edu">Education</label> <br>
+              <input type="checkbox" id="romance">
+              <label for="romance">Romance</label> <br>
+              <input type="checkbox" id="econ, finance">
+              <label for="econ, finance">Economics, Finance</label> <br>
+              <input type="checkbox" id="plays">
+              <label for="plays">Plays</label> <br>
+              <input type="checkbox" id="classics">
+              <label for="classics">Classics</label> <br>
+              <input type="checkbox" id="self-help">
+              <label for="self-help">Self-Help</label> <br>
+              <input type="checkbox" id="horror">
+              <label for="horror">Horror</label> <br>
+              <input type="checkbox" id="humor">
+              <label for="humor">Humor</label> <br>
+              <input type="checkbox" id="socsci">
+              <label for="socsci">Social Science</label> <br>
+              <input type="checkbox" id="mystery, crime">
+              <label for="mystery, crime">Mystery, Crime</label> <br>
+            </div>
+          </div>
+        </details>
+
+
 
         <!-- LANGUAGE -->
-        <h3>Language: </h3> <!--make this hideable-->
-        <button type="button" class="collapsible" id="lang-collapsible">Show/Hide options</button>
-        <div class="row">
-          <div class="column first">
-            <input type = "checkbox" id = "eng">
-            <label for = "eng">English</label> <br>
-            <input type = "checkbox" id = "spa">
-            <label for = "spa">Spanish</label> <br>
-            <input type = "checkbox" id = "grc">
-            <label for = "grc">Ancient Greek</label> <br>
-            <input type = "checkbox" id = "ger">
-            <label for = "ger">German</label> <br>
-            <input type = "checkbox" id = "ara">
-            <label for = "ara">Arabic</label> <br>
-            <input type = "checkbox" id = "zho">
-            <label for = "zho">Mandarin</label> <br>
-            <input type = "checkbox" id = "por">
-            <label for = "por">Portuguese</label> <br>
-            <input type = "checkbox" id = "ita">
-            <label for = "ita">Italian</label> <br>
-            <input type = "checkbox" id = "msa">
-            <label for = "msa">Malay</label> <br>
-            <input type = "checkbox" id = "wel">
-            <label for = "wel">Welsh</label> <br>
-            <input type = "checkbox" id = "nor">
-            <label for = "nor">Norwegian</label> <br>
-            <input type = "checkbox" id = "gla">
-            <label for = "gla">Scottish Gaelic</label> <br>
-            
-          </div>
+        <h3>Language: </h3> 
+        <details>
+          <summary>Open/Close</summary>
+          <div class="row">
+            <div class="column first">
+              <input type = "checkbox" id = "eng">
+              <label for = "eng">English</label> <br>
+              <input type = "checkbox" id = "spa">
+              <label for = "spa">Spanish</label> <br>
+              <input type = "checkbox" id = "grc">
+              <label for = "grc">Ancient Greek</label> <br>
+              <input type = "checkbox" id = "ger">
+              <label for = "ger">German</label> <br>
+              <input type = "checkbox" id = "ara">
+              <label for = "ara">Arabic</label> <br>
+              <input type = "checkbox" id = "zho">
+              <label for = "zho">Mandarin</label> <br>
+              <input type = "checkbox" id = "por">
+              <label for = "por">Portuguese</label> <br>
+              <input type = "checkbox" id = "ita">
+              <label for = "ita">Italian</label> <br>
+              <input type = "checkbox" id = "msa">
+              <label for = "msa">Malay</label> <br>
+              <input type = "checkbox" id = "wel">
+              <label for = "wel">Welsh</label> <br>
+              <input type = "checkbox" id = "nor">
+              <label for = "nor">Norwegian</label> <br>
+              <input type = "checkbox" id = "gla">
+              <label for = "gla">Scottish Gaelic</label> <br>
+              
+            </div>
 
-          <div class="column second">
-            <input type = "checkbox" id = "fre">
-            <label for = "fre">French</label> <br>
-            <input type = "checkbox" id = "mul">
-            <label for = "mul">Multiple</label> <br>
-            <input type = "checkbox" id = "enm">
-            <label for = "enm">Middle English</label> <br>
-            <input type = "checkbox" id = "jpn">
-            <label for = "jpn">Japanese</label> <br>
-            <input type = "checkbox" id = "nl">
-            <label for = "nl">Dutch</label> <br>
-            <input type = "checkbox" id = "lat">
-            <label for = "lat">Latin</label> <br>
-            <input type = "checkbox" id = "srp">
-            <label for = "srp">Serbian</label> <br>
-            <input type = "checkbox" id = "rus">
-            <label for = "rus">Russian</label> <br>
-            <input type = "checkbox" id = "glg">
-            <label for = "glg">Galician</label> <br>
-            <input type = "checkbox" id = "swe">
-            <label for = "swe">Swedish</label> <br>
-            <input type = "checkbox" id = "tur">
-            <label for = "tur">Turkish</label> <br>
-            <input type = "checkbox" id = "ale">
-            <label for = "ale">Aleut</label> <br>
-            
-          </div> <br>
-          </div>
+            <div class="column second">
+              <input type = "checkbox" id = "fre">
+              <label for = "fre">French</label> <br>
+              <input type = "checkbox" id = "mul">
+              <label for = "mul">Multiple</label> <br>
+              <input type = "checkbox" id = "enm">
+              <label for = "enm">Middle English</label> <br>
+              <input type = "checkbox" id = "jpn">
+              <label for = "jpn">Japanese</label> <br>
+              <input type = "checkbox" id = "nl">
+              <label for = "nl">Dutch</label> <br>
+              <input type = "checkbox" id = "lat">
+              <label for = "lat">Latin</label> <br>
+              <input type = "checkbox" id = "srp">
+              <label for = "srp">Serbian</label> <br>
+              <input type = "checkbox" id = "rus">
+              <label for = "rus">Russian</label> <br>
+              <input type = "checkbox" id = "glg">
+              <label for = "glg">Galician</label> <br>
+              <input type = "checkbox" id = "swe">
+              <label for = "swe">Swedish</label> <br>
+              <input type = "checkbox" id = "tur">
+              <label for = "tur">Turkish</label> <br>
+              <input type = "checkbox" id = "ale">
+              <label for = "ale">Aleut</label> <br>
+              
+            </div> <br>
+            </div>
+          </details>
           <script>
-            var collapsible = document.getElementById("lang-collapsible");
+            /*
+            var collapsible = document.getElementByClass("collapsible");
             collapsible.addEventListener("click", function(){
               var content = collapsible.nextElementSibling;
               if(content.style.display === "block") {
@@ -321,11 +438,11 @@
                 } else {
                   content.style.display = "block";
                 }
-            });
+            });*/
           </script>
 
           <!-- ISBN -->
-          <h3>ISBN</h3>
+          <h3>ISBN: </h3>
           ISBN  <select name="isbn-contains-1" id ="isbn-contains-1">
           <option value="contains-isbn-1">Contains</option>
           <option value="is-exactly-isbn-1">Is exactly</option>
@@ -359,6 +476,9 @@
         <script>
           //INPUT VALIDATION
           function validateForm(){
+            //AVAILABILITY
+            //defaults to "on shelf only" so no issues here
+
             //AUTHOR
             let author1 = document.forms["adv-search"]["author-search-1"].value;
             let author2 = document.forms["adv-search"]["author-search-2"].value;
@@ -374,19 +494,29 @@
             let title5 = document.forms["adv-search"]["title-search-5"].value;
             
             //PUBLICATION YEAR
-            let pubYearMin = document.forms["adv-search"]["pub-year-min"].value;
-            let pubYearMax = document.forms["adv-search"]["pub-year-max"].value;
-            if(pubYearMin > pubYearMax){
+            let pubYearMin1 = document.forms["adv-search"]["pub-year-min"].value;
+            let pubYearMax1 = document.forms["adv-search"]["pub-year-max"].value;
+            if(pubYearMin1 > pubYearMax1){
               alert("Minimum year should be before maximum year. Please select a valid range for publication year.");
               return false;
             }
-            if (pubYearMin == null){
-              pubYearMin = 1900;
+            if(pubYearMin2 > pubYearMax2){
+              alert("Minimum year should be before maximum year. Please select a valid range for publication year.");
+              return false;
             }
-            if (pubYearMax == null){
-              pubYearMax = 2010;
+            if (pubYearMin1 == null){
+              pubYearMin1 = 1900;
             }
-            if(pubYearMin < 1900 || pubYearMax > 2010){
+            if (pubYearMax1 == null){
+              pubYearMax1 = 2010;
+            }
+            if (pubYearMin2 == null){
+              pubYearMin2 = 1900;
+            }
+            if (pubYearMax2 == null){
+              pubYearMax2 = 2010;
+            }
+            if(pubYearMin1 < 1900 || pubYearMax1 > 2010 || pubYearMin2 < 1900 || pubYearMax2 > 2010){
               alert("Our catalog only contains books from 1900 to 2010. Please select a range for publication year.");
               return false;
             }
@@ -408,6 +538,8 @@
               alert("Our rating system is from 0 to 5. Please select a valid range for rating.");
               return false;
             }
+
+            //GENRE 
 
 
             //LANGUAGE

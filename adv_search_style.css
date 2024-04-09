@@ -5,7 +5,7 @@
   width: 20%;
 }
 .second{
-  width: 30%;
+  width: 50%;
 }
 .row:after{
   content: "";
