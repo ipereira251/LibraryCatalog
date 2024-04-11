@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
 <head>
   <!-- Required meta tags -->
@@ -9,7 +10,7 @@
   <link href="style_home.css" type="text/css" rel="stylesheet">
 
   <!-- Browser Tab title -->
-  <title>UTD Library Login</title>
+  <title>UTD Library</title>
 </head>
 
 <body>
@@ -21,24 +22,17 @@
     <a href="holds.php">Active Holds</a>
     <a href="logout.php">Logout</a>
   </nav>
+  <?php include_once 'name.php' ?>
   <div class="container  col-lg-4 col-lg-offset-4" style="padding-top: 50px; text-align: center;">
-    <h2><b>Access Holds & Checkouts</b></h2><hr><br>
+    <h2><b>Search the Catalog</b></h2><hr><br>
     <div class="container">
-      <form action="./login.php" method="get">
+      
+      <form action="./basicSearch.php" method="get">
         <div class="input-group mb-3 text-center">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="uname">NetID</span>
-          </div>
-          <input type="text" class="form-control" placeholder="NetID" name="netid" aria-label="netid" aria-describedby="uname">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="pwd">Password </span>
-          </div>
-          <input type="password" class="form-control" placeholder="Password" name="Password" aria-label="password" aria-describedby="pwd">
+          <input type="text" class="form-control" placeholder="Author, Title, Year, etc." name="input" aria-label="input" aria-describedby="input">
         </div>
         <br>
-        <button type="submit" class="button btn-success btn-lg btn-block">Log In</button>
+        <button type="submit" class="button btn-success btn-lg btn-block">Search</button>
       </form>
     </div>
   </div>

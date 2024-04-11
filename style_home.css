@@ -37,3 +37,56 @@ button{
 	color: black;
 	cursor: pointer;
 }
+
+.navbar {
+	display: flex;
+	flex-direction: row; /* Optional, default is row */
+	justify-content:  flex-start; /* Distribute items horizontally */
+  }
+  
+.navbar a {
+	list-style: none; /* Remove default bullet points */
+	padding: 10px; /* Add spacing between elements */
+}
+  
+/* Set table-wide properties */
+table {
+  border-collapse: collapse; /* Remove space between cell borders */
+  border: 1px solid #ddd; /* Add a solid border */
+  width: 100%; /* Make table fill full width */
+  table-layout: auto;
+}
+
+/* Style table headers */
+th,
+td {
+  border: 1px solid #ddd; /* Add borders to each cell */
+  padding: 8px; /* Add padding for spacing */
+  text-align: left; /* Align content left by default */
+  overflow-wrap: break-word;
+}
+
+/* Style table caption (optional) */
+caption {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Alternate row colors for better readability (optional) */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  overflow-wrap: break-word;
+}
+
+a {
+	color: black;
+  }
+  
+  /* Alternatively, target each state separately */
+  a:link,
+  a:visited {
+	color: black;
+  }
+  
