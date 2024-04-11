@@ -26,9 +26,9 @@
     <a href="logout.php">Logout</a>
   </nav>
   <div class='container'>
-  <h2>Checkout History</h2>
+  <h2>Active Holds</h2>
   <ul>
-    <?php include_once("checkouts_query.php") ?>
+    <?php include_once("holds_query.php") ?>
   </ul>
   </div>
 </body>
