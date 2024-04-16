@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar fixed-top navbar-light" style="background-color: #3EA055;">
   <img src="comet.png" style="height: 70px; width: 200px;" alt="UTD Comet Icon"></a>
-    <a href="basicSearch.php">Basic Search</a>
+    <a href="basicSearch.php">Search the Catalog</a>
     
     <a href="checkouts.php">Checkout History</a>
     <a href="holds.php">Active Holds</a>
