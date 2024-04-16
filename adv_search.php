@@ -36,8 +36,9 @@
           document.getElementById('author-andor-3').style.display = 'none';
           document.getElementById('author-contains-3').style.display = 'none';
           document.getElementById('author-search-3').style.display = 'none';
-          document.getElementById('author-nl-3').style.display = 'none';
+          //document.getElementById('author-nl-3').style.display = 'none';
 
+          /*
           document.getElementById('author-andor-4').style.display = 'none';
           document.getElementById('author-contains-4').style.display = 'none';
           document.getElementById('author-search-4').style.display = 'none';
@@ -45,14 +46,14 @@
 
           document.getElementById('author-andor-5').style.display = 'none';
           document.getElementById('author-contains-5').style.display = 'none';
-          document.getElementById('author-search-5').style.display = 'none';
+          document.getElementById('author-search-5').style.display = 'none';*/
 
           //// TITLE 
           document.getElementById('title-andor-3').style.display = 'none';
           document.getElementById('title-contains-3').style.display = 'none';
           document.getElementById('title-search-3').style.display = 'none';
-          document.getElementById('title-nl-3').style.display = 'none';
-
+          //document.getElementById('title-nl-3').style.display = 'none';
+            /*
           document.getElementById('title-andor-4').style.display = 'none';
           document.getElementById('title-contains-4').style.display = 'none';
           document.getElementById('title-search-4').style.display = 'none';
@@ -60,7 +61,7 @@
 
           document.getElementById('title-andor-5').style.display = 'none';
           document.getElementById('title-contains-5').style.display = 'none';
-          document.getElementById('title-search-5').style.display = 'none';
+          document.getElementById('title-search-5').style.display = 'none';*/
 
           //// PUBLICATION YEAR
           document.getElementById("pub-year-or").style.display = "none";
@@ -132,9 +133,9 @@
           <option value="is-exactly-author-3" >Is exactly</option>
         </select>
         <input type="search" id="author-search-3" >
-        <button type="button" onclick="newlineAuthor3()" id="author-nl-3">+ Add New Line</button>
+        <!--button type="button" onclick="newlineAuthor3()" id="author-nl-3">+ Add New Line</button>
         <br>
-        <!-- 4th search term -->
+        <!-- 4th search term 
         <select name="author-andor-4" id="author-andor-4" >
           <option value="and">And</option>
           <option value="or">Or</option>
@@ -146,7 +147,7 @@
         <input type="search" id="author-search-4" >
         <button type="button" onclick="newlineAuthor4()" id="author-nl-4">+ Add New Line</button>
         <br>
-        <!-- 5th search term -->
+        <!-- 5th search term 
         <select name="author-andor-5" id="author-andor-5" >
           <option value="and">And</option>
           <option value="or">Or</option>
@@ -156,7 +157,7 @@
           <option value="is-exactly-author-5" >Is exactly</option>
         </select>
         <input type="search" id="author-search-5" >
-        <br>
+        <br-->
         
 
         <!-- TITLE -->
@@ -190,9 +191,9 @@
           <option value="is-exactly-title-3" >Is exactly</option>
         </select>
         <input type="search" id="title-search-3" >
-        <button type="button" onclick="newlineTitle3()" id="title-nl-3">+ Add New Line</button>
+        <!--button type="button" onclick="newlineTitle3()" id="title-nl-3">+ Add New Line</button>
         <br>
-        <!-- 4th search term -->
+        <!-- 4th search term
         <select name="title-andor-4" id="title-andor-4" >
           <option value="and">And</option>
           <option value="or">Or</option>
@@ -204,7 +205,7 @@
         <input type="search" id="title-search-4" >
         <button type="button" onclick="newlineTitle4()" id="title-nl-4">+ Add New Line</button>
         <br>
-        <!-- 5th search term -->
+        <!-- 5th search term
         <select name="title-andor-5" id="title-andor-5" >
           <option value="and">And</option>
           <option value="or">Or</option>
@@ -214,7 +215,7 @@
           <option value="is-exactly-title-5" >Is exactly</option>
         </select>
         <input type="search" id="title-search-5" >
-        <br>
+        <br-->
 
 
         <!---->
@@ -225,7 +226,7 @@
           document.getElementById('author-contains-3').style.display = 'inline';
           document.getElementById('author-search-3').style.display = 'inline';
           document.getElementById('author-nl-3').style.display = 'inline';
-        }
+        }/*
         function newlineAuthor3(){
           document.getElementById('author-nl-3').style.display = 'none';
           document.getElementById('author-andor-4').style.display = 'inline';
@@ -239,7 +240,7 @@
           document.getElementById('author-contains-5').style.display = 'inline';
           document.getElementById('author-search-5').style.display = 'inline';
         }
-        
+        */
 
         function newlineTitle2(){
           document.getElementById('title-nl-2').style.display = 'none';
@@ -248,6 +249,7 @@
           document.getElementById('title-search-3').style.display = 'inline';
           document.getElementById('title-nl-3').style.display = 'inline';
         }
+        /*
         function newlineTitle3(){
           document.getElementById('title-nl-3').style.display = 'none';
           document.getElementById('title-andor-4').style.display = 'inline';
@@ -260,7 +262,7 @@
           document.getElementById('title-andor-5').style.display = 'inline';
           document.getElementById('title-contains-5').style.display = 'inline';
           document.getElementById('title-search-5').style.display = 'inline';
-        }
+        }*/
         </script>
         <!-- PUB YEAR -->
         <h3>Publication year: </h3>
