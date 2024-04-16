@@ -36,56 +36,22 @@
           document.getElementById('author-andor-3').style.display = 'none';
           document.getElementById('author-contains-3').style.display = 'none';
           document.getElementById('author-search-3').style.display = 'none';
-          document.getElementById('author-nl-3').style.display = 'none';
-
-          document.getElementById('author-andor-4').style.display = 'none';
-          document.getElementById('author-contains-4').style.display = 'none';
-          document.getElementById('author-search-4').style.display = 'none';
-          document.getElementById('author-nl-4').style.display = 'none';
-
-          document.getElementById('author-andor-5').style.display = 'none';
-          document.getElementById('author-contains-5').style.display = 'none';
-          document.getElementById('author-search-5').style.display = 'none';
 
           //// TITLE 
           document.getElementById('title-andor-3').style.display = 'none';
           document.getElementById('title-contains-3').style.display = 'none';
           document.getElementById('title-search-3').style.display = 'none';
-          document.getElementById('title-nl-3').style.display = 'none';
-
-          document.getElementById('title-andor-4').style.display = 'none';
-          document.getElementById('title-contains-4').style.display = 'none';
-          document.getElementById('title-search-4').style.display = 'none';
-          document.getElementById('title-nl-4').style.display = 'none';
-
-          document.getElementById('title-andor-5').style.display = 'none';
-          document.getElementById('title-contains-5').style.display = 'none';
-          document.getElementById('title-search-5').style.display = 'none';
-
+            
           //// PUBLICATION YEAR
-          document.getElementById("pub-year-or").style.display = "none";
-          document.getElementById("pub-year-min-2").style.display = "none";
-          document.getElementById("pub-year-max-2").style.display = "none";
-          document.getElementById("pub-year-min-2-label").style.display = "none";
-          document.getElementById("pub-year-max-2-label").style.display = "none";
-
+          
 
           //// RATING
-          document.getElementById("rating-or").style.display = "none";
-          document.getElementById("rating-min-2").style.display = "none";
-          document.getElementById("rating-max-2").style.display = "none";
-          document.getElementById("rating-min-2-label").style.display = "none";
-          document.getElementById("rating-max-2-label").style.display = "none";
+          
             
           //GENRE 
         
-            
-
           //// LANGUAGE
-          //document.getElementByClass('collapsible').style.display = 'none';
-          //collapsible.classList.toggle("active");
           
-
           //// ISBN
           document.getElementById('isbn-andor-2').style.display = 'none';
           document.getElementById('isbn-contains-2').style.display = 'none';
@@ -93,7 +59,6 @@
 
         }
         </script>
-        <!--<button type="button" id="adv-search-submit">Submit</button>-->
 
         <!-- AVAILABILITY -->
         <h3>Availability: </h3>
@@ -132,32 +97,6 @@
           <option value="is-exactly-author-3" >Is exactly</option>
         </select>
         <input type="search" id="author-search-3" >
-        <button type="button" onclick="newlineAuthor3()" id="author-nl-3">+ Add New Line</button>
-        <br>
-        <!-- 4th search term -->
-        <select name="author-andor-4" id="author-andor-4" >
-          <option value="and">And</option>
-          <option value="or">Or</option>
-        </select>
-        <select name="author-contains-4" id="author-contains-4" >
-          <option value="contains-author-4">Contains</option>
-          <option value="is-exactly-author-4" >Is exactly</option>
-        </select>
-        <input type="search" id="author-search-4" >
-        <button type="button" onclick="newlineAuthor4()" id="author-nl-4">+ Add New Line</button>
-        <br>
-        <!-- 5th search term -->
-        <select name="author-andor-5" id="author-andor-5" >
-          <option value="and">And</option>
-          <option value="or">Or</option>
-        </select>
-        <select name="author-contains-5" id="author-contains-5" >
-          <option value="contains-author-5">Contains</option>
-          <option value="is-exactly-author-5" >Is exactly</option>
-        </select>
-        <input type="search" id="author-search-5" >
-        <br>
-        
 
         <!-- TITLE -->
         <!-- 1st search term -->
@@ -190,34 +129,7 @@
           <option value="is-exactly-title-3" >Is exactly</option>
         </select>
         <input type="search" id="title-search-3" >
-        <button type="button" onclick="newlineTitle3()" id="title-nl-3">+ Add New Line</button>
-        <br>
-        <!-- 4th search term -->
-        <select name="title-andor-4" id="title-andor-4" >
-          <option value="and">And</option>
-          <option value="or">Or</option>
-        </select>
-        <select name="title-contains-4" id="title-contains-4" >
-          <option value="contains-title-4">Contains</option>
-          <option value="is-exactly-title-4" >Is exactly</option>
-        </select>
-        <input type="search" id="title-search-4" >
-        <button type="button" onclick="newlineTitle4()" id="title-nl-4">+ Add New Line</button>
-        <br>
-        <!-- 5th search term -->
-        <select name="title-andor-5" id="title-andor-5" >
-          <option value="and">And</option>
-          <option value="or">Or</option>
-        </select>
-        <select name="title-contains-5" id="title-contains-5" >
-          <option value="contains-title-5">Contains</option>
-          <option value="is-exactly-title-5" >Is exactly</option>
-        </select>
-        <input type="search" id="title-search-5" >
-        <br>
-
-
-        <!---->
+      
         <script>
         function newlineAuthor2(){
           document.getElementById('author-nl-2').style.display = 'none';
@@ -226,20 +138,6 @@
           document.getElementById('author-search-3').style.display = 'inline';
           document.getElementById('author-nl-3').style.display = 'inline';
         }
-        function newlineAuthor3(){
-          document.getElementById('author-nl-3').style.display = 'none';
-          document.getElementById('author-andor-4').style.display = 'inline';
-          document.getElementById('author-contains-4').style.display = 'inline';
-          document.getElementById('author-search-4').style.display = 'inline';
-          document.getElementById('author-nl-4').style.display = 'inline';
-        }
-        function newlineAuthor4(){
-          document.getElementById('author-nl-4').style.display = 'none';
-          document.getElementById('author-andor-5').style.display = 'inline';
-          document.getElementById('author-contains-5').style.display = 'inline';
-          document.getElementById('author-search-5').style.display = 'inline';
-        }
-        
 
         function newlineTitle2(){
           document.getElementById('title-nl-2').style.display = 'none';
@@ -248,19 +146,7 @@
           document.getElementById('title-search-3').style.display = 'inline';
           document.getElementById('title-nl-3').style.display = 'inline';
         }
-        function newlineTitle3(){
-          document.getElementById('title-nl-3').style.display = 'none';
-          document.getElementById('title-andor-4').style.display = 'inline';
-          document.getElementById('title-contains-4').style.display = 'inline';
-          document.getElementById('title-search-4').style.display = 'inline';
-          document.getElementById('title-nl-4').style.display = 'inline';
-        }
-        function newlineTitle4(){
-          document.getElementById('title-nl-4').style.display = 'none';
-          document.getElementById('title-andor-5').style.display = 'inline';
-          document.getElementById('title-contains-5').style.display = 'inline';
-          document.getElementById('title-search-5').style.display = 'inline';
-        }
+        
         </script>
         <!-- PUB YEAR -->
         <h3>Publication year: </h3>
@@ -269,23 +155,6 @@
         <label for="pub-year-max-1" id="pub-year-max-1-label"> to </label>
         <input type="search" id="pub-year-max-1" name="pub-year-max-1">
         <p id="pub-year-or">or</p>
-        <button type="button" onclick="newlineYear1()" id="year-nl-1">+ Add New Line</button>
-        <br>
-        <label for="pub-year-min-2" id="pub-year-min-2-label">from </label>
-        <input type="search" id="pub-year-min-2" name="pub-year-min-2">
-        <label for="pub-year-max-2" id="pub-year-max-2-label"> to </label>
-        <input type="search" id="pub-year-max-2" name="pub-year-max-2">
-
-        <script>
-          function newlineYear1(){
-          document.getElementById("year-nl-1").style.display = 'none';
-          document.getElementById("pub-year-or").style.display = 'inline';
-          document.getElementById("pub-year-min-2").style.display = 'inline';
-          document.getElementById('pub-year-min-2-label').style.display = 'inline';
-          document.getElementById('pub-year-max-2').style.display = 'inline';
-          document.getElementById('pub-year-max-2-label').style.display = 'inline';
-        }
-        </script>
 
         <!-- RATING -->
         <h3>Rating: </h3>
@@ -294,24 +163,7 @@
         <label for="rating-max-1" id="rating-max-1-label"> to </label>
         <input type="search" id="rating-max-1">
         <p id="rating-or">or</p>
-        <button type="button" onclick="newlineRating1()" id="rating-nl-1">+ Add New Line</button>
-        <br>
-        <label for="rating-min-2" id="rating-min-2-label">from </label>
-        <input type="search" id="rating-min-2">
-        <label for="rating-max-2" id="rating-max-2-label"> to </label>
-        <input type="search" id="rating-max-2">
-
-        <script>
-          function newlineRating1(){
-          document.getElementById("rating-nl-1").style.display = 'none';
-          document.getElementById("rating-or").style.display = 'inline';
-          document.getElementById("rating-min-2").style.display = 'inline';
-          document.getElementById("rating-min-2-label").style.display = 'inline';
-          document.getElementById('rating-max-2').style.display = 'inline';
-          document.getElementById("rating-max-2-label").style.display = 'inline';
-          }
-        </script>
-
+        
         <!-- GENRE -->
         <h3>Genre: </h3>
         <details>
@@ -371,8 +223,6 @@
             </div>
           </div>
         </details>
-
-
 
         <!-- LANGUAGE -->
         <h3>Language: </h3> 
@@ -436,18 +286,6 @@
             </div> <br>
             </div>
           </details>
-          <script>
-            /*
-            var collapsible = document.getElementByClass("collapsible");
-            collapsible.addEventListener("click", function(){
-              var content = collapsible.nextElementSibling;
-              if(content.style.display === "block") {
-                  content.style.display = "none";
-                } else {
-                  content.style.display = "block";
-                }
-            });*/
-          </script>
 
           <!-- ISBN -->
           <h3>ISBN: </h3>
@@ -456,30 +294,9 @@
           <option value="is-exactly-isbn-1">Is exactly</option>
           </select>
           <input type="search" id="isbn-search-1">
-          <button type="button" onclick="newlineISBN1()" id="isbn-nl-1">+ Add New Line</button>
 
-          <!-- 2nd search term -->
-          <br> 
-          <select name="isbn-andor-2" id="isbn-andor-2">
-          <option value="and">And</option>
-          <option value="or">Or</option>
-          </select>
-          <select name="isbn-contains-2" id="isbn-contains-2">
-          <option value="contains-isbn-2">Contains</option>
-          <option value="is-exactly-isbn-2">Is exactly</option>
-          </select>
-          <input type="search" id="isbn-search-2">
 
-          <script>
-            //// ISBN 
-            function newlineISBN1(){
-              document.getElementById('isbn-nl-1').style.display = 'none';
-              document.getElementById('isbn-andor-2').style.display = 'inline';
-              document.getElementById('isbn-contains-2').style.display = 'inline';
-              document.getElementById('isbn-search-2').style.display = 'inline';
-
-            }
-          </script>
+        
         <br>
         <script>
           //INPUT VALIDATION
@@ -491,24 +308,17 @@
             let author1 = document.forms["adv-search"]["author-search-1"].value;
             let author2 = document.forms["adv-search"]["author-search-2"].value;
             let author3 = document.forms["adv-search"]["author-search-3"].value;
-            let author4 = document.forms["adv-search"]["author-search-4"].value;
-            let author5 = document.forms["adv-search"]["author-search-5"].value;
-
+            
             //TITLE
             let title1 = document.forms["adv-search"]["title-search-1"].value;
             let title2 = document.forms["adv-search"]["title-search-2"].value;
             let title3 = document.forms["adv-search"]["title-search-3"].value;
-            let title4 = document.forms["adv-search"]["title-search-4"].value;
-            let title5 = document.forms["adv-search"]["title-search-5"].value;
+            
             
             //PUBLICATION YEAR
             let pubYearMin1 = document.forms["adv-search"]["pub-year-min"].value;
             let pubYearMax1 = document.forms["adv-search"]["pub-year-max"].value;
             if(pubYearMin1 > pubYearMax1){
-              alert("Minimum year should be before maximum year. Please select a valid range for publication year.");
-              return false;
-            }
-            if(pubYearMin2 > pubYearMax2){
               alert("Minimum year should be before maximum year. Please select a valid range for publication year.");
               return false;
             }
@@ -518,13 +328,8 @@
             if (pubYearMax1 == null){
               pubYearMax1 = 2010;
             }
-            if (pubYearMin2 == null){
-              pubYearMin2 = 1900;
-            }
-            if (pubYearMax2 == null){
-              pubYearMax2 = 2010;
-            }
-            if(pubYearMin1 < 1900 || pubYearMax1 > 2010 || pubYearMin2 < 1900 || pubYearMax2 > 2010){
+      
+            if(pubYearMin1 < 1900 || pubYearMax1 > 2010){
               alert("Our catalog only contains books from 1900 to 2010. Please select a range for publication year.");
               return false;
             }
