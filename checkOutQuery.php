@@ -67,13 +67,13 @@ if ($num_rows > 0) {
   echo "</table>";
 }
 
-$stmt = $conn->prepare("SELECT COUNT(*) as ct FROM checkout WHERE NetID = ? AND ISBN = ? AND isValid = 1;");
-  $stmt->bind_param("ss", $netid, $isbn);
+$stmt = $conn->prepare("SELECT COUNT(*) as ct FROM checkout WHERE ISBN = ? AND isValid = 1;");
+  $stmt->bind_param("s", $isbn);
   $stmt->execute();
   $res = $stmt->get_result();
   $row = $res->fetch_assoc();
   if ($row["ct"] === 1) {
-    echo "<br><b>You already have this book checked out!</b><br><br>";
+    echo "<br><b>Someone already has this book checked out!</b><br><br>";
   } else {
 $stmt = $conn->prepare("SELECT NetID, COUNT(*) as ct FROM hold
 WHERE ISBN = ?
