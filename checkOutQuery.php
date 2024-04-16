@@ -75,7 +75,7 @@ $stmt = $conn->prepare("SELECT COUNT(*) as ct FROM checkout WHERE NetID = ? AND 
   if ($row["ct"] === 1) {
     echo "<br><b>You already have this book checked out!</b><br><br>";
   } else {
-$stmt = $conn->prepare("SELECT NetID FROM hold
+$stmt = $conn->prepare("SELECT NetID, COUNT(*) as ct FROM hold
 WHERE ISBN = ?
   AND hold.TimeIssued = (
     SELECT MIN(TimeIssued)
@@ -86,7 +86,7 @@ $stmt->bind_param("ss", $isbn, $isbn);
 $stmt->execute();
 $res = $stmt->get_result();
 $row = $res->fetch_assoc();
-if ($row["NetID"] !== $netid) {
+if ($row["ct"] === 1 And $row["NetID"] !== $netid) {
   echo "<br><b>Someone else owns the oldest hold for this book!</b><br><br>";
 } else {
   $stmt = $conn->prepare("DELETE FROM hold

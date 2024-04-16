@@ -71,7 +71,13 @@ SET isValid = 0
 WHERE ISBN = ?;");
   $stmt->bind_param("s", $isbn);
   $stmt->execute();
-  echo "<br><b>Successfully returned!</b><br><br>";
+  $affected_rows = $stmt->affected_rows;
+  if($affected_rows === 0) {
+    echo "<br><b>We already have that book!</b><br><br>";
+  } else {
+    echo "<br><b>Successfully returned!</b><br><br>";
+  }
+  
 
   // Generate link back to search results page with user input
   $link = "http://localhost/adminPanel.php";
