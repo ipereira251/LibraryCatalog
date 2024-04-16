@@ -41,6 +41,10 @@ if(empty($name)) {
   $_SESSION["netid"]=$input_netid;
   $_SESSION["name"]=$name;
   echo "<p>Logged in as: <b>" . htmlspecialchars($_SESSION["name"]) . "</b></p>";
+
+  if($input_netid === "utd000000") {
+      echo "<a href=\"adminPanel.php\">Admin Panel</a>";
+  }
 }
 
 // close the sql connection

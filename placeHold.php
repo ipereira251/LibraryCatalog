@@ -24,6 +24,7 @@
     <a href="checkouts.php">Checkout History</a>
     <a href="holds.php">Active Holds</a>
     <a href="logout.php">Logout</a>
+    <?php include_once 'secret.php' ?>
   </nav>
   <div class='container'>
   <?php include_once("placeHoldQuery.php") ?>

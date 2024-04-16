@@ -11,6 +11,7 @@
 
   <!-- Browser Tab title -->
   <title>UTD Library</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>

@@ -15,10 +15,10 @@
 </head>
 
 <body>
-<?php session_start(); ?>
-<?php include_once 'name.php' ?>
-<nav class="navbar fixed-top navbar-light" style="background-color: #3EA055;">
-    <a class="navbar-brand" href="index.html" ><img src="comet.png" style="height: 40px; width: 200px;" alt="UTD Comet Icon"></a>
+  <?php session_start(); ?>
+  <?php include_once 'name.php' ?>
+  <nav class="navbar fixed-top navbar-light" style="background-color: #3EA055;">
+  <a class="navbar-brand" href="index.html" ><img src="comet.png" style="height: 40px; width: 200px;" alt="UTD Comet Icon"></a>
     <a href="basicSearch.php">Basic Search</a>
     <a href="adv_search.php">Advanced Search</a>
     <a href="checkouts.php">Checkout History</a>
@@ -27,7 +27,7 @@
     <?php include_once 'secret.php' ?>
   </nav>
   <div class='container'>
-  <?php include_once("removeHoldQuery.php") ?>
+  <?php include_once("checkOutQuery.php") ?>
   </div>
 </body>
 </html>

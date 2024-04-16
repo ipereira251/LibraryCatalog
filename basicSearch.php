@@ -29,6 +29,7 @@
     <a href="checkouts.php">Checkout History</a>
     <a href="holds.php">Active Holds</a>
     <a href="logout.php">Logout</a>
+    <?php include_once 'secret.php' ?>
   </nav>
   <div class="container  col-lg-4 col-lg-offset-4" style="padding-top: 50px; text-align: center;">
     <h2><b>Search the Catalog</b></h2><hr><br>

@@ -20,6 +20,8 @@ function getDB() {
   return $conn;
 }
 
+$isbn = $_GET['ISBN'];
+
 // create a connection
 $conn = getDB();
 
@@ -49,8 +51,8 @@ if ($num_rows > 0) {
     $chk = $conn->prepare("SELECT count(*) as ct
                             FROM checkout
                             WHERE isValid = 1 AND ISBN = ?");
-    $isbn = $row["ISBN"];
-    $chk->bind_param("s", $isbn);
+    $risbn = $row["ISBN"];
+    $chk->bind_param("s", $risbn);
     $chk->execute();
     $res2 = $chk->get_result();
     $row2 = $res2->fetch_assoc();
@@ -64,31 +66,14 @@ if ($num_rows > 0) {
   echo "</table>";
 }
 
-$stmt = $conn->prepare("SELECT COUNT(*) as ct FROM checkout WHERE NetID = ? AND ISBN = ? AND isValid = 1;");
-  $netid = $_SESSION["netid"];
-  $stmt->bind_param("ss", $netid, $isbn);
+$stmt = $conn->prepare("UPDATE checkout
+SET isValid = 0
+WHERE ISBN = ?;");
+  $stmt->bind_param("s", $isbn);
   $stmt->execute();
-  $res = $stmt->get_result();
-  $row = $res->fetch_assoc();
-  if ($row["ct"] === 1) {
-    echo "<br><b>You already have this book checked out!</b><br><br>";
-  } else {
-    $stmt = $conn->prepare("SELECT COUNT(*) as ct FROM hold WHERE NetID = ? AND ISBN = ?;");
-$netid = $_SESSION["netid"];
-$stmt->bind_param("ss", $netid, $isbn);
-$stmt->execute();
-$res = $stmt->get_result();
-$row = $res->fetch_assoc();
-if ($row["ct"] === 1) {
-  echo "<br><b>You already have a hold for this book!</b><br><br>";
-} else {
-  $stmt = $conn->prepare("INSERT INTO hold VALUES (?, ?, default)");
-  $stmt->bind_param("ss", $netid, $isbn);
-  $stmt->execute();
-  echo "<br><b>Hold successfully placed!</b><br><br>";
-}}
+  echo "<br><b>Successfully returned!</b><br><br>";
 
   // Generate link back to search results page with user input
-  $link = "http://localhost/basic_form.php?input=$input";
-  echo "<a href='$link'>Back to Search Results</a>";
+  $link = "http://localhost/adminPanel.php";
+  echo "<a href='$link'>Back to Admin Panel</a>";
 ?>
