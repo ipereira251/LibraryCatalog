@@ -73,7 +73,7 @@ WHERE ISBN = ?;");
   $stmt->execute();
   $affected_rows = $stmt->affected_rows;
   if($affected_rows === 0) {
-    echo "<br><b>We already have that book!</b><br><br>";
+    echo "<br><b>We already have that book, or that book doesn't exist!</b><br><br>";
   } else {
     echo "<br><b>Successfully returned!</b><br><br>";
   }

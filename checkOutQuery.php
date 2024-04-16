@@ -67,6 +67,14 @@ if ($num_rows > 0) {
   echo "</table>";
 }
 
+$stmt = $conn->prepare("SELECT COUNT(*) as ct FROM book WHERE ISBN = ?;");
+  $stmt->bind_param("s", $isbn);
+  $stmt->execute();
+  $res = $stmt->get_result();
+  $row = $res->fetch_assoc();
+  if ($row["ct"] === 0) {
+    echo "<br><b>We don't have that book!</b><br><br>";
+  } else {
 $stmt = $conn->prepare("SELECT COUNT(*) as ct FROM checkout WHERE ISBN = ? AND isValid = 1;");
   $stmt->bind_param("s", $isbn);
   $stmt->execute();
@@ -103,7 +111,7 @@ if ($row["ct"] === 1 And $row["NetID"] !== $netid) {
   $stmt->bind_param("ss", $netid, $isbn);
   $stmt->execute();
   echo "<br><b>Checkout successfully placed!</b><br><br>";
-}}
+}}}
 
   // Generate link back to search results page with user input
   $link = "http://localhost/adminPanel.php";
