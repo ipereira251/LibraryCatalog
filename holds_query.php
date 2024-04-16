@@ -36,7 +36,7 @@ $result = $stmt->get_result(); // Store the result set in a variable
 $num_rows = $result->num_rows;
 if ($num_rows > 0) {
   echo "<table>";
-echo "<tr><th>Title</th><th>Author(s)</th><th>ISBN</th><th>DueDate</th><th>Queue Position</th></tr>";
+echo "<tr><th>Title</th><th>Author(s)</th><th>ISBN</th><th>DueDate</th><th>Queue Position</th><th>Action</th</tr>";
 while ($row = $result->fetch_assoc()) {
   // Check if each value exists before echoing inside <td>
   echo "<tr>";
@@ -47,14 +47,19 @@ while ($row = $result->fetch_assoc()) {
   echo "<td>";
   $qpos = $conn->prepare("SELECT count(*) as ct
   FROM hold h1, hold h2
-  WHERE h1.NetID = ? AND h1.ISBN = ? AND h2.timeissued < h1.timeissued;");
+  WHERE h1.NetID = ? AND h1.ISBN = ? AND h2.ISBN = ? AND h2.timeissued <= h1.timeissued;");
   $isbn = $row["ISBN"];
-  $qpos->bind_param("ss", $netid, $isbn);
+  $qpos->bind_param("sss", $netid, $isbn, $isbn);
   $qpos->execute();
   $res2 = $qpos->get_result();
   $row2 = $res2->fetch_assoc();
   echo (isset($row2["ct"]) ? $row2["ct"] : "");
   echo "</td>";
+  $otherScript = 'removeHold.php';
+  echo "<td><form action='$otherScript' method='post'>
+            <input type='hidden' name='isbn' value='" . $row["ISBN"] . "'>
+            <button type='submit'>Remove Hold</button>
+          </form></td>";
   echo "</tr>";
 }
 echo "</table>";

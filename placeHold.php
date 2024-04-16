@@ -26,7 +26,7 @@
     <a href="logout.php">Logout</a>
   </nav>
   <div class='container'>
-  <?php include_once("basic_query.php") ?>
+  <?php include_once("placeHoldQuery.php") ?>
   </div>
 </body>
 </html>

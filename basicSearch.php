@@ -16,10 +16,16 @@
 <body>
   <?php session_start(); ?>
   <?php include_once 'name.php' ?>
+  <?php
+  if (!isset($_SESSION["netid"])) {
+    header("Location: logout.php");
+    exit;
+  }
+  ?>
   <nav class="navbar fixed-top navbar-light" style="background-color: #3EA055;">
     <a class="navbar-brand" href="index.html" ><img src="comet.png" style="height: 40px; width: 200px;" alt="UTD Comet Icon"></a>
     <a href="basicSearch.php">Basic Search</a>
-    <a href="adv_search.html">Advanced Search</a>
+    <a href="adv_search.php">Advanced Search</a>
     <a href="checkouts.php">Checkout History</a>
     <a href="holds.php">Active Holds</a>
     <a href="logout.php">Logout</a>

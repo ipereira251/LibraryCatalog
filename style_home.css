@@ -4,35 +4,41 @@ body {
 	font-family: "Sans-serif", Verdana, serif;
 	font-size: 20px;
 }
-.form-control{
+
+.form-control {
 	font-size: 21px;
 }
-button{
+
+button {
 	border: 0px;
 	border-radius: 5px;
 }
 
 .navbar .navbar-nav .nav-link {
-    color: #2C3539;
-    padding-left: 20px;
-    font-size: 22px;
+	color: #2C3539;
+	padding-left: 20px;
+	font-size: 22px;
 }
+
 /* change the color of active or hovered links */
-.navbar .nav-item.active .nav-link{
+.navbar .nav-item.active .nav-link {
 	color: #2C3539;
 	font-size: 24px;
 	font-weight: bold;
 }
+
 .navbar .nav-item:hover .nav-link {
-    color: white;
+	color: white;
 	text-decoration: none;
 }
-.navbar button{
+
+.navbar button {
 	background: #2C3539;
 	color: white;
 	border: 1px solid balck;
 }
-.navbar button:hover{
+
+.navbar button:hover {
 	background: white;
 	color: black;
 	cursor: pointer;
@@ -40,53 +46,62 @@ button{
 
 .navbar {
 	display: flex;
-	flex-direction: row; /* Optional, default is row */
-	justify-content:  flex-start; /* Distribute items horizontally */
-  }
-  
-.navbar a {
-	list-style: none; /* Remove default bullet points */
-	padding: 10px; /* Add spacing between elements */
+	flex-direction: row;
+	/* Optional, default is row */
+	justify-content: flex-start;
+	/* Distribute items horizontally */
 }
-  
+
+.navbar a {
+	list-style: none;
+	/* Remove default bullet points */
+	padding: 10px;
+	/* Add spacing between elements */
+}
+
 /* Set table-wide properties */
 table {
-  border-collapse: collapse; /* Remove space between cell borders */
-  border: 1px solid #ddd; /* Add a solid border */
-  width: 100%; /* Make table fill full width */
-  table-layout: auto;
+	border-collapse: collapse;
+	/* Remove space between cell borders */
+	border: 1px solid #ddd;
+	/* Add a solid border */
+	width: 100%;
+	/* Make table fill full width */
+	table-layout: auto;
 }
 
 /* Style table headers */
 th,
 td {
-  border: 1px solid #ddd; /* Add borders to each cell */
-  padding: 8px; /* Add padding for spacing */
-  text-align: left; /* Align content left by default */
-  overflow-wrap: break-word;
+	border: 1px solid #ddd;
+	/* Add borders to each cell */
+	padding: 8px;
+	/* Add padding for spacing */
+	text-align: left;
+	/* Align content left by default */
+	overflow-wrap: break-word;
 }
 
 /* Style table caption (optional) */
 caption {
-  font-weight: bold;
-  font-size: 18px;
-  text-align: left;
-  padding: 10px;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
+	padding: 10px;
 }
 
 /* Alternate row colors for better readability (optional) */
 tr:nth-child(even) {
-  background-color: #f2f2f2;
-  overflow-wrap: break-word;
+	background-color: #f2f2f2;
+	overflow-wrap: break-word;
 }
 
 a {
 	color: black;
-  }
-  
-  /* Alternatively, target each state separately */
-  a:link,
-  a:visited {
+}
+
+/* Alternatively, target each state separately */
+a:link,
+a:visited {
 	color: black;
-  }
-  
+}

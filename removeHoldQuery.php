@@ -1,5 +1,10 @@
 <?php
-// Function to create a sql connection.
+// Check if data is received
+if (isset($_POST['isbn'])) {
+  $isbn = $_POST['isbn'];
+}
+
+  // Function to create a sql connection.
 function getDB() {
   $dbhost = "localhost";
   $dbuser = "root";
@@ -18,26 +23,18 @@ function getDB() {
 // create a connection
 $conn = getDB();
 
-$input = $_GET['input'];
-
-// do the query
-$searchTerm = "%" . $input . "%"; // Add wildcards for substring match
-
 $stmt = $conn->prepare("SELECT Title, Authors, ISBN, Genres, Rating, NumPages
                           FROM book
-                          WHERE Title LIKE ?
-                             OR Authors LIKE ?
-                             OR Genres LIKE ?
-                             OR ISBN = ?");
+                          WHERE ISBN = ?");
 
-$stmt->bind_param("ssss", $searchTerm, $searchTerm, $searchTerm, $searchTerm);
+$stmt->bind_param("s", $isbn);
 $stmt->execute();
 $result = $stmt->get_result(); // Store the result set in a variable
 
 $num_rows = $result->num_rows;
 if ($num_rows > 0) {
   echo "<table>";
-  echo "<tr><th>Title</th><th>Author(s)</th><th>ISBN</th><th>Genres</th><th>Rating</th><th>#Pages</th><th>Availability</th><th>Action</th></tr>";
+  echo "<tr><th>Title</th><th>Author(s)</th><th>ISBN</th><th>Genres</th><th>Rating</th><th>#Pages</th><th>Availability</th></tr>";
   while ($row = $result->fetch_assoc()) {
     // Check if each value exists before echoing inside <td>
     echo "<tr>";
@@ -52,7 +49,6 @@ if ($num_rows > 0) {
     $chk = $conn->prepare("SELECT count(*) as ct
                             FROM checkout
                             WHERE isValid = 1 AND ISBN = ?");
-    $isbn = $row["ISBN"];
     $chk->bind_param("s", $isbn);
     $chk->execute();
     $res2 = $chk->get_result();
@@ -63,20 +59,25 @@ if ($num_rows > 0) {
       echo "Available";
     }
     echo "</td>";
-
-    // Add button with form to send ISBN and input to another script (replace 'other_script.php' with the actual script)
-    $otherScript = 'placeHold.php';
-    echo "<td><form action='$otherScript' method='post'>
-              <input type='hidden' name='isbn' value='" . $row["ISBN"] . "'>
-              <input type='hidden' name='input' value='$input'>
-              <button type='submit'>Place Hold</button>
-            </form></td>";
   }
   echo "</table>";
-} else {
-  echo "No books found.";
 }
 
-// close the sql connection
+$stmt = $conn->prepare("DELETE FROM hold WHERE NetID = ? AND ISBN = ?;");
+$netid = $_SESSION["netid"];
+$stmt->bind_param("ss", $netid, $isbn);
+$stmt->execute();
+
+$affected_rows = $stmt->affected_rows;
+if ($affected_rows > 0) {
+  echo "<br><b>Hold successfully removed!</b><br><br>";
+} else {
+  echo "<br><b>Hold removal failed!</b><br>"; // Inform user about failure
+  echo $netid . "<br>";
+  echo $isbn . "<br><br>";
+}
+
+$link = "http://localhost/holds.php";
+echo "<a href='$link'>Back to Holds</a>";
 $conn->close();
 ?>
