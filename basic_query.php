@@ -30,7 +30,7 @@ $stmt = $conn->prepare("SELECT Title, Authors, ISBN, Genres, Rating, NumPages
                              OR Genres LIKE ?
                              OR ISBN = ?");
 
-$stmt->bind_param("ssss", $searchTerm, $searchTerm, $searchTerm, $searchTerm);
+$stmt->bind_param("ssss", $searchTerm, $searchTerm, $searchTerm, $input);
 $stmt->execute();
 $result = $stmt->get_result(); // Store the result set in a variable
 
@@ -74,7 +74,8 @@ if ($num_rows > 0) {
   }
   echo "</table>";
 } else {
-  echo "No books found.";
+  echo "No books found. Try searching for part of a Title, Author, or Genre, or an exact ISBN.";
+  echo "<br><a href='http://localhost/basicSearch.php'>Try Another Search</a>";
 }
 
 // close the sql connection
